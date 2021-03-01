@@ -57,6 +57,7 @@ mod erc20 {
             self.total_supply
         }
 
+        /// 查询账户余额
         #[ink(message)]
         pub fn balance_of(&self, owner: AccountId) -> Balance {
             *self.balances.get(&owner).unwrap_or(&0)
